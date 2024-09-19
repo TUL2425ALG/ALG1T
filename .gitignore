@@ -1,0 +1,42 @@
+### Java ###
+# Compiled class file
+*.class
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Package Files #
+*.jar
+
+### NetBeans ###
+# IDE-specific directories NetBeans
+**/nbproject/
+manifest.mf
+
+# Compiled Ant build artifacts
+build/
+
+# Generated files and directories
+dist/
+build.xml
+
+### Intellij ###
+# IDE-specific directories IntelliJ IDEA
+.idea/**/
+out/
+
+### VS Code ###
+.vscode/
+
+#OS
+.DS_Store
+
+# Maven-specific files (if applicable)
+target/
+
+
+
+
+
+
