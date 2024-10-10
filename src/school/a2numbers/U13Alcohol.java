@@ -14,6 +14,10 @@ public class U13Alcohol {
     public static void main(String[] args) {
         //---vstupy---
         Scanner sc = new Scanner(System.in);
+        boolean isMan;
+        System.out.println("Jste muz? [a/_]");
+        isMan = sc.next().charAt(0) == 'a';
+        
         //objem vypiteho napoje v ml
         System.out.println("Zadej mnozstvi vypiteho napoje v ml:");
         double Q = sc.nextInt(); 
@@ -28,9 +32,9 @@ public class U13Alcohol {
         //hustota ethanolu v g/cm^3
         final double rho = 0.789;
         //podil vody v organismu
-        final double r = 0.7;
+        final double r = isMan ? 0.7 : 0.6;
         //rychlost odbouravani v g/hr
-        final double beta = 0.1;
+        final double beta = isMan ? 0.1 : 0.085;
         //m ethanolu [g]
         double meth = Q * p * rho / 100;
         //promile po konzumaci
