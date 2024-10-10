@@ -25,4 +25,12 @@ public class ToSeconds {
         //Vystup
         System.out.format("Čas závodníka je %d vteřin%n\n", celkem);
     }
+    
+    public static int convertToSeconds(int pocetHodin, int pocetMinut, int pocetSekund){
+        final int SEC_IN_HOUR = 3600;
+        final int SEC_IN_MIN = 60;
+        int celkem = (pocetHodin * SEC_IN_HOUR) + (pocetMinut * SEC_IN_MIN) + pocetSekund;
+        return celkem;
+    }
+    
 }
