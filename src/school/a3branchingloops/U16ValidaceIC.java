@@ -11,7 +11,7 @@ import java.util.Scanner;
  *
  * @author Meetsys
  */
-public class Ukol16 {
+public class U16ValidaceIC {
 
     /**
      * @param args the command line arguments
@@ -19,54 +19,59 @@ public class Ukol16 {
     
     public static void main(String[] args) {
         //input
-        //12345672-validni
-        //12345675-nevalidni
+        //12345672-valid
+        //12345675-invalid
         Scanner sc = new Scanner(System.in);
         System.out.println("Zadej IČ:");
         int number=sc.nextInt();
         Boolean valid = false;
+		
         //process
         String ic = String.valueOf(number);
         int sum = 0;
         if(ic.length()<=8){
+		
         /*for(int i =0;i<ic.length()-1;i++){
-            sum += (ic.length()-i)*Integer.parseInt(ic.substring(i,i+1));
+            sum += (ic.length()-i)*(ic.charAt(i)-'0');
         }*/
+		
         int length = ic.length();
         if (length >= 2) {
-            sum += 8 * Integer.parseInt(ic.substring(0, 1));
+            sum += 8 * (ic.charAt(0)-'0');
         }
         if (length >= 3) {
-            sum += 7 * Integer.parseInt(ic.substring(1, 2));
+            sum += 7 * (ic.charAt(1)-'0');
         }
         if (length >= 4) {
-            sum += 6 * Integer.parseInt(ic.substring(2, 3));
+            sum += 6 * (ic.charAt(2)-'0');
         }
         if (length >= 5) {
-            sum += 5 * Integer.parseInt(ic.substring(3, 4));
+            sum += 5 * (ic.charAt(3)-'0');
         }
         if (length >= 6) {
-            sum += 4 * Integer.parseInt(ic.substring(4, 5));
+            sum += 4 * (ic.charAt(4)-'0');
         }
         if (length >= 7) {
-            sum += 3 * Integer.parseInt(ic.substring(5, 6));
+            sum += 3 * (ic.charAt(5)-'0');
         }
         if (length >= 8) {
-            sum += 2 * Integer.parseInt(ic.substring(6, 7));
+            sum += 2 * (ic.charAt(6)-'0');
         }
         
         
-        sum %=11;
-        
-        if(sum == 0&&Integer.parseInt(ic.substring(ic.length()-1,ic.length()))==1){
+        int remainder = sum %=11;
+        int lastDigit = ic.charAt(ic.length()-1)-'0';
+		
+        if(remainder == 0 && lastDigit==1){
             valid = true;
-        }else if(sum == 1&&Integer.parseInt(ic.substring(ic.length()-1,ic.length()))==0){
+        }else if(remainder == 1 && lastDigit==0){
             valid = true;
-        }else if(sum == Integer.parseInt(ic.substring(ic.length()-1,ic.length()))){
+        }else if(lastDigit==11-remainder){
             valid = true;
         }
         
         }
+		
          //output
         System.out.println("IČ je "+(valid?"validní":"nevalidní"));
         
