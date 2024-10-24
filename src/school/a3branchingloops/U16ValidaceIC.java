@@ -1,17 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package alg1;
 
-import static java.lang.Integer.parseInt;
+package school.a3branchingloops;
+
 import java.util.Scanner;
 
 /**
  *
  * @author Meetsys
  */
-public class Ukol16 {
+public class U16ValidaceIC {
 
     /**
      * @param args the command line arguments
@@ -56,13 +52,13 @@ public class Ukol16 {
         }
         
         
-        sum %=11;
+        sum %=11;//remainder
         
         if(sum == 0&&Integer.parseInt(ic.substring(ic.length()-1,ic.length()))==1){
             valid = true;
         }else if(sum == 1&&Integer.parseInt(ic.substring(ic.length()-1,ic.length()))==0){
             valid = true;
-        }else if(sum == Integer.parseInt(ic.substring(ic.length()-1,ic.length()))){
+        }else if(sum == 11-Integer.parseInt(ic.substring(ic.length()-1,ic.length()))){
             valid = true;
         }
         
