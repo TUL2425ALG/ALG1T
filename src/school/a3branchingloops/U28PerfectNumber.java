@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package school.a3branchingloops;
 
-/**
- *
- * @author d
- */
 import java.util.Scanner;
 
-public class PerfectNumber {
+public class U28PerfectNumber {
 
     public static void main(String[] args) {
         //tests 6 = True; 29 = False; 496 = True
@@ -19,6 +12,7 @@ public class PerfectNumber {
         Scanner scanner = new Scanner(System.in);
         int cislo;
         int soucetDelitelu = 0;
+        boolean isPerfect = false;
         
 
         while (true) {
@@ -30,24 +24,25 @@ public class PerfectNumber {
                 break;
             }
 
-            if (cislo > 0) {
-
                 for (int i = 1; i <= cislo / 2; i++) {
                     if (cislo % i == 0) {
                         soucetDelitelu += i;
                     }
                 }
-
-                if (soucetDelitelu == cislo) {
+                
+                isPerfect = soucetDelitelu == cislo;
+                soucetDelitelu =0;
+                System.out.println("Cislo " + (isPerfect ? "je " : "neni ") + "dokonale.");
+                
+                /*if (soucetDelitelu == cislo) {
                     soucetDelitelu = 0;
-                    System.out.println(cislo + " je dokonalé číslo.");
+                    isPerfect = true;
+                    //System.out.println(cislo + " je dokonalé číslo.");
                 } else {
                     soucetDelitelu = 0;
-                    System.out.println(cislo + " není dokonalé číslo.");
-                }
-            } else {
-                System.out.println("Zadané číslo musí být kladné.");
-            }
+                    //System.out.println(cislo + " není dokonalé číslo.");
+                }*/
+          
         }
 
         scanner.close();

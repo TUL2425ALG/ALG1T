@@ -1,6 +1,7 @@
 package school.a3branchingloops;
 
 import java.util.Scanner;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class U38GuessingNumber {
     static Scanner sc = new Scanner(System.in); //globalni promenna
@@ -76,7 +77,26 @@ public class U38GuessingNumber {
 //    }
 
     private static void userGuesses() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        
+        int userNumber = 0;
+        int compNumber = ThreadLocalRandom.current().nextInt(min, max + 1);
+        
+        
+        System.out.println("Myslene cislo je  v rozsahu " + min + " to " + max + ".");
+        boolean found = false;
+        do{
+            System.out.println("Hadej cislo: ");
+            userNumber = sc.nextInt();
+            if  (userNumber == compNumber){
+                found = true;
+            } else if (userNumber > compNumber){
+                System.out.println("Moje cislo je MENSI");
+            }else {
+                System.out.println("Moje cislo je VETSI");
+            }
+        }while(!found);
+        System.out.println("Je to spravne");
+
     }
 
 }
