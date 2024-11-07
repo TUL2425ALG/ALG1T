@@ -10,7 +10,7 @@ import java.util.Scanner;
  *
  * @author matas
  */
-public class u36 {
+public class U36Kosoctverec {
 
     /**
      * @param args the command line arguments
@@ -47,8 +47,7 @@ public class u36 {
                         }
                         
                         for(int k = 1; k <= i; k++){
-                            System.out.format("*");
-                            System.out.format(" ");
+                            System.out.format("* ");
                             
                         }
                         
