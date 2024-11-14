@@ -6,6 +6,11 @@ public class TriangleTools {
         System.out.println(triangleCircumcircle(2, 5, 7, 6, 1, 4));//5,7
         System.out.println(triangleCircumcircle(2, 5, 7, 6, 2, 5));//nevalidni stav
         System.out.println(triangleCircumcircle(5, 8, 6, 2, 1, 3));//3,42
+        
+        System.out.println("Poloměr kružnice vepsané:");
+        System.out.println(CalculateInradius(0, 0, 3, 0, 0, 4)); // očekávaný výsledek 1.0
+        System.out.println(CalculateInradius(0, 0, 1, 1, 2, 0)); // očekávaný výsledek cca 0.207
+        System.out.println(CalculateInradius(0, 0, 1, 1, 10, 10)); // očekávaný výsledek -1 - nevalidní stav
 
 
     } 
@@ -36,5 +41,36 @@ public class TriangleTools {
         double r = (a * b * c) / (4 * s);
         
         return r;
+    }
+    /**
+     * Calculates the inradius of a triangle with vertices at (ax, ay), (bx, by), and (cx, cy).
+     *
+     * @param ax x-coordinate of point A
+     * @param ay y-coordinate of point A
+     * @param bx x-coordinate of point B
+     * @param by y-coordinate of point B
+     * @param cx x-coordinate of point C
+     * @param cy y-coordinate of point C
+     * @return the inradius of the triangle
+     */
+    public static double CalculateInradius(double ax, double ay, double bx, double by, double cx, double cy){
+        double stranaA = Math.sqrt(Math.pow((bx - cx), 2) + Math.pow((by - cy), 2));
+        double stranaB = Math.sqrt(Math.pow((ax - cx), 2) + Math.pow((ay - cy), 2));
+        double stranaC = Math.sqrt(Math.pow((ax - bx), 2) + Math.pow((ay - by), 2));
+
+        // lze trojúhelník sestrojit?
+        if (stranaA + stranaB <= stranaC || stranaA + stranaC <= stranaB || stranaB + stranaC <= stranaA) {
+            return -1; // pokud trojúhelník neexistuje
+        }
+
+        // poloviční obvod
+        double malyObvod = (stranaA + stranaB + stranaC) / 2;
+
+        //obsah pomocí Heronova vzorce
+        double obsah = Math.sqrt(malyObvod * (malyObvod - stranaA) * (malyObvod - stranaB) * (malyObvod - stranaC));
+
+        double polomerKruzniceVepsane = obsah/malyObvod;
+
+        return polomerKruzniceVepsane;
     }
 }
