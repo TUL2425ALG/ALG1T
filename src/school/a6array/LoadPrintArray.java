@@ -21,7 +21,9 @@ public class LoadPrintArray {
         System.out.println("Zadej hodnoty");
         loadArray(numbers1);
         
-        printArray(numbers1); 
+        printArray(numbers1);
+        System.out.println("");
+        print(numbers1);
     }
     
     public static int[] loadIntArray(Scanner sc){
@@ -69,6 +71,14 @@ public class LoadPrintArray {
         for (int i = 0; i < numbers.length; i++) {
             System.out.format("%.2f ",numbers[i]); 
         }
+    }
+    
+    public static void print(int[] a){
+        System.out.print("[");
+        for (int i = 0; i < a.length - 1; i++) { //po predposledni prvek
+            System.out.print(a[i] + ", ");
+        }
+        System.out.print(a[a.length-1] + "]"); //vypis posledniho prvku
     }
     
     
