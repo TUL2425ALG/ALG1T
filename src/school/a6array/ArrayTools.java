@@ -12,6 +12,12 @@ public class ArrayTools {
 //        System.out.println(sumOfArray(c));
 //        System.out.println(maxOfArray(b));
 //        System.out.println(maxOfArray(c));
+        int[] a = {1,2,3,4,5};
+        int[] e = {1,2,2,4,5};
+        System.out.println(isSorted(c)); //ocekavame false
+        System.out.println(isSorted(b)); //ocekavame false
+        System.out.println(isSorted(a)); //ocekavame true
+        System.out.println(isSorted(e)); //ocekavame false
     }
 
     public static int sumOfArray(int[] a) {
@@ -102,5 +108,21 @@ public class ArrayTools {
             }
         }
         return -1;
+    }
+    
+    public static boolean isSorted(int[] a)
+    {
+        //boolean sorted = true; 
+        for(int i = 0; i < a.length-1 ; i++)
+        {
+            if(a[i] >= a[i+1])
+            {
+              return false;  
+               // sorted = false;
+//                break;
+            }  
+        }
+        return true;
+        //return sorted;
     }
 }
