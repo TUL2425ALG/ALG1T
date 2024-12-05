@@ -1,13 +1,13 @@
 package school.a8datastructure;
 import java.util.Scanner;
-
+//
 //        double[][] testpolygon1 = {{0, 1, 1, 0},    // obvod 4     0 0 1 0 1 1 0 1
 //                                   {0 ,0 ,1 ,1}};   // obash 1
 //        double[][] testpolygon2 = {{0, 3, 0},       // obovod 12   0 0 3 0 0 4  
 //                                   {0, 0, 4}};      // obsah 6
 //        double[][] testpolygon3 = {{0, 4, 4, 0},    // obvod 14    0 0 4 0 4 3 0 3
 //                                   {0, 0, 3, 3}};   // obash 12
-
+//
 public class U1_2PolygonObvodObsah{
 
     public static void main(String[] args) {
