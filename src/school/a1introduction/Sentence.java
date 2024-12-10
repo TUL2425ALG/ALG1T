@@ -8,7 +8,7 @@ public class Sentence {
         String name = "Filip";
         int yob = 2010;
         char classChar = 'A';
-        final int CURRENT_YEAR = Calendar.getInstance().get(Calendar.YEAR); //konstanta, LocalDate
+        final int CURRENT_YEAR = Calendar.getInstance().get(Calendar.YEAR); //konstanta, používá se vic trida LocalDate
         final int AGE_START_SCHOOL = 6;
         
         //processing
