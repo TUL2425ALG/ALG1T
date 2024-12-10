@@ -1,8 +1,8 @@
-package a3_branching_loops;
+package school.a3branchingloops;
 
 import java.util.Scanner;
 
-public class Uloha39_calculator {
+public class U39Calculator {
 
     public static void main(String[] args) {
 

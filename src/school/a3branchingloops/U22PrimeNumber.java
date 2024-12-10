@@ -21,18 +21,19 @@ public class U22PrimeNumber {
             //processing
             if (number == 1) {
                 isPrimeNumber = false;
-            }
-            int possibleDivisor = 2;
-            while (possibleDivisor <= Math.sqrt(number) && isPrimeNumber){ //for (int i = 2; i <= Math.sqrt(number) && isPrimeNumber; i++) {
-                if (number % possibleDivisor == 0) {
-                    isPrimeNumber = false;
-                    //break;
+            } else {
+                int possibleDivisor = 2;
+                while (possibleDivisor <= Math.sqrt(number) && isPrimeNumber) { //for (int i = 2; i <= Math.sqrt(number) && isPrimeNumber; i++) {
+                    if (number % possibleDivisor == 0) {
+                        isPrimeNumber = false;
+                        //break;
+                    }
+                    possibleDivisor++;
                 }
-                possibleDivisor++;
             }
             //out
             System.out.println("Číslo " + (isPrimeNumber ? "je" : "není") + " prvočíslo");
-            
+
             //repeat app
             System.out.println("Chcete pokračovat? (A, a)");
 //            String s = sc.next().toUpperCase();
