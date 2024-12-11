@@ -24,7 +24,7 @@ public class U17TriangleCalculations {
         double C_y = sc.nextDouble();
         
         //process
-        
+        //mohlo by se jeste testovat, jestli body skutecne tvori trojuhelnik  
         //vypocet delky stran trojuhelniku
         double strana_c = Math.sqrt((B_x - A_x) * (B_x - A_x) + (B_y - A_y) * (B_y - A_y));
         double strana_b = Math.sqrt((C_x - A_x) * (C_x - A_x) + (C_y - A_y) * (C_y - A_y));

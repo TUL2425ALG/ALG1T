@@ -8,13 +8,13 @@ public class TriangleTools {
         System.out.println(triangleCircumcircle(5, 8, 6, 2, 1, 3));//3,42
         
         System.out.println("Poloměr kružnice vepsané:");
-        System.out.println(CalculateInradius(0, 0, 3, 0, 0, 4)); // očekávaný výsledek 1.0
-        System.out.println(CalculateInradius(0, 0, 1, 1, 2, 0)); // očekávaný výsledek cca 0.207
-        System.out.println(CalculateInradius(0, 0, 1, 1, 10, 10)); // očekávaný výsledek -1 - nevalidní stav
+        System.out.println(calculateInradius(0, 0, 3, 0, 0, 4)); // očekávaný výsledek 1.0
+        System.out.println(calculateInradius(0, 0, 1, 1, 2, 0)); // očekávaný výsledek cca 0.207
+        System.out.println(calculateInradius(0, 0, 1, 1, 10, 10)); // očekávaný výsledek -1 - nevalidní stav
 
 
     } 
-    
+    //Opsana kruznice
     /**
      * Calculates the radius of the circumcircle of a triangle defined by three points in Cartesian coordinates.
      * 
@@ -24,7 +24,7 @@ public class TriangleTools {
      * @param y2 the y-coordinate of point 2
      * @param x3 the x-coordinate of point 3
      * @param y3 the y-coordinate of point 3
-     * @return the radius of the circumcircle of the triangle
+     * @return the radius of the circumcircle of the triangle or 0 when the the calculation was not possible
      */
     public static double triangleCircumcircle(double x1, double y1, double x2, double y2, double x3, double y3){
         //vypocet stran
@@ -33,8 +33,8 @@ public class TriangleTools {
         double c = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
         //vypocet plochy
         double s = (0.5) * Math.abs(x1 * (y2 - y3) + x2 * (y3 - y1) + x3 * (y1 - y2));
-        if (s == 0) {
-            System.out.println("Nevalidni vstupni hodnoty");
+        if (s == 0) { //ostrou rovnost porovnavat idealne pomoci eps
+            //System.out.println("Nevalidni vstupni hodnoty"); //v knihovnich metodach se pro nevalidni vstupy nepouziva sout, ale vyjimky
             return 0;
         }
         //vypocet polomeru
@@ -42,6 +42,7 @@ public class TriangleTools {
         
         return r;
     }
+    //vepsana kruznice
     /**
      * Calculates the inradius of a triangle with vertices at (ax, ay), (bx, by), and (cx, cy).
      *
@@ -53,7 +54,7 @@ public class TriangleTools {
      * @param cy y-coordinate of point C
      * @return the inradius of the triangle
      */
-    public static double CalculateInradius(double ax, double ay, double bx, double by, double cx, double cy){
+    public static double calculateInradius(double ax, double ay, double bx, double by, double cx, double cy){
         double stranaA = Math.sqrt(Math.pow((bx - cx), 2) + Math.pow((by - cy), 2));
         double stranaB = Math.sqrt(Math.pow((ax - cx), 2) + Math.pow((ay - cy), 2));
         double stranaC = Math.sqrt(Math.pow((ax - bx), 2) + Math.pow((ay - by), 2));
