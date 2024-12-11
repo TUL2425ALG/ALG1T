@@ -8,7 +8,7 @@ package school.a8datastructure;
 
 // import java.util.Scanner;
 
-public class u6_distanceFromOrigin {
+public class U06DistanceFromOrigin {
         // static Scanner sc = new Scanner(System.in); // In the case, you want to load by system.
     
     static int n = 5; // Number of vertices
@@ -52,10 +52,11 @@ public class u6_distanceFromOrigin {
         //     }
         // }
         
-        // Sort
+        // Sort //JV zvolte existujici tridici algoritmus - podoba se to na bubble sort, ale moc nerozumim rozsahum for - prijdou mi zbytecne velke
         for (int it = 1; it < n*n*2; it++) { // While would probably be better, but "It just works!" - Todd Howard
+            //JV The comment about "Todd Howard" is humorous but may not be suitable for production code. Clear and professional comments would help future readers understand the code.
             for (int i = 1; i < n; i++) {
-                if (getVal(data[i]) < getVal(data[i-1])) {
+                if (getVal(data[i]) < getVal(data[i-1])) { //JV hodnekrat zbytecne pocitate vzdalenost stejneho bodu 
                     tmp = data[i];
                     data[i] = data[i-1];
                     data[i-1] = tmp;
