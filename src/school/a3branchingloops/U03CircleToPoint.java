@@ -52,6 +52,7 @@ public class U03CircleToPoint {
             default -> System.out.println("Nastala chyba.");
         }
         
+        //Ukazka nepresnosti realnych cisel
         double a = 5.4;
         double b = 6.2;
         System.out.println(a+b);

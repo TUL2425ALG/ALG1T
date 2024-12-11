@@ -1,13 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package school.a72darray;
+package school.a7array2d;
 
-/**
- *
- * @author Vitvarova-J-31c9
- */
 public class U03SymmetricalMatrix {
 
     public static void main(String[] args) {
@@ -51,8 +43,8 @@ public class U03SymmetricalMatrix {
 
     public static boolean IsMainAxisSymmetrical(int[][] matrix) {
         for (int i = 0; i < matrix.length - 1; i++) {
-            for (int j = matrix.length - 1; j > i; j--) {
-                //for (int j = i + 1; j < matrix.length ; j++) {}
+            //for (int j = matrix.length - 1; j > i; j--) {
+            for (int j = i + 1; j < matrix.length ; j++) {
                 if (matrix[i][j] != matrix[j][i]) {
                     return false;
                 }

@@ -1,6 +1,6 @@
-package school.a72darray;
+package school.a7array2d;
 
-public class U1NormMatrix {
+public class U01NormMatrix {
 
     public static void main(String[] args) {
         int[][] a = {{1, -15, 3},
@@ -18,7 +18,7 @@ public class U1NormMatrix {
             }
         }
         
-        //nrmuju matici
+        //normuju matici
         int[][] normed = new int[a.length][a[0].length];
         for (int i = 0; i < a.length; i++) {
             for(int j = 0; j < a[i].length; j++){

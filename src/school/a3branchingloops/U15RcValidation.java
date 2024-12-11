@@ -17,13 +17,14 @@ public class U15RcValidation {
     //(2) je-li zbytek 10, poslední číslice musí být 0; 
     //(3) jinak je poslední číslice rovna zbytku.
     int digits9 = c1*1000+c2/10;
-    int z = digits9%11;
+    int remainder = digits9%11;
     int last = c2%10;
+    
     boolean isvalid = false;
-    if (z==10 && last==0){
+    if (remainder == 10 && last == 0){
         isvalid = true;
-    }else if (last==z){
-        isvalid=true;
+    }else if (last == remainder){
+        isvalid = true;
     }
     System.out.println("Rodné číslo "+(isvalid? "je" : "není")+" validní");
     

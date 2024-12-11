@@ -8,7 +8,7 @@ public class U06CicleCalculations {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         //input
-        System.out.println("zadej poloměr kruhu (například 1,52): ");
+        System.out.println("Zadej poloměr kruhu (například 1,52): ");
         double r = sc.nextDouble();
         final double PI = Math.PI;
         //procces

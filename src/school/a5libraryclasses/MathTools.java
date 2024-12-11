@@ -1,15 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package school.a5libraryclasses;
 
 import static school.a5libraryclasses.NaturalNumberTools.factorial;
 
-/**
- *
- * @author Vitvarova-J-31c9
- */
 public class MathTools {
     
     public static void main(String[] args) {
@@ -39,7 +31,7 @@ public class MathTools {
         int k = 1;
         
         while (true) {
-            last = Math.pow(x, i) / factorial(i);
+            last = Math.pow(x, i) / factorial(i); //neefektivni
             if (last < eps) {
                 break;
             }

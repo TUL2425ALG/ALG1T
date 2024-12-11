@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package school.a1introduction;
 
 import java.util.InputMismatchException;
@@ -14,6 +10,8 @@ import java.util.Random;
 public class BanknotesCounts {
     public static Scanner scanner = new Scanner(System.in);
     public static Random rnd = new Random();
+    
+    //JV je to metoda "logiky", at vraci pole s počtem bankovek ať nic nevypisuje, pole hodnot bankovek může být globální konstanta 
     public static void calcAmount(int amount){
         //deklarujeme vsechny mozne hodnoty bankovek
         int[] hodnotyBankovek = {100, 50, 20, 10,5, 2,1};
@@ -27,7 +25,7 @@ public class BanknotesCounts {
             pocetBankovek[i] = amount/hodnotyBankovek[i];
             amount = (amount % hodnotyBankovek[i]);
         }
-        //vypis konecnych hodnot
+        //vypis konecnych hodnot //JV nová metoda uzivatelskeho rozhrani 
         for (int k = 0; k < pocetBankovek.length; k++) {
             if (hodnotyBankovek[k] >= 100) {
                 System.out.println("Počet bankovek hodnoty " + hodnotyBankovek[k] + "  :  "+ pocetBankovek[k]);
@@ -82,4 +80,6 @@ public class BanknotesCounts {
             System.out.println("Při spuštění z konzole nebyla zadána částka jako parametr....");
         }
     }
+   
+   //JV skuste prosim ještě program napsat celý do main bez pouziti pole a cyklu
 }

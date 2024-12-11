@@ -1,8 +1,8 @@
-package a3_branching_loops;
+package school.a3branchingloops;
 
 import java.util.Scanner;
 
-public class Uloha39_calculator {
+public class U39Calculator {
 
     public static void main(String[] args) {
 
@@ -33,7 +33,7 @@ public class Uloha39_calculator {
                         a /= b;
                     } else {
                         System.out.println("Dělení nulou nelze.");
-                        break;
+                        break; //neni potreba
                     }
                     break;
                 default:

@@ -71,8 +71,9 @@ public class ArrayTools {
     public static int countMin2(int[] a) {
 
         int count = 1;
-        int min = a[firstMinIndex(a)];
-        for (int i = 0; i < a.length; i++) {
+        int firstMinIndex = firstMinIndex(a);
+        int min = a[firstMinIndex];
+        for (int i = firstMinIndex + 1; i < a.length; i++) {
             if (a[i] == min) {
                 count++;
             }
