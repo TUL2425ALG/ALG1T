@@ -52,17 +52,27 @@ public class U06DistanceFromOrigin {
         //     }
         // }
         
-        // Sort //JV zvolte existujici tridici algoritmus - podoba se to na bubble sort, ale moc nerozumim rozsahum for - prijdou mi zbytecne velke
-        for (int it = 1; it < n*n*2; it++) { // While would probably be better, but "It just works!" - Todd Howard
-            //JV The comment about "Todd Howard" is humorous but may not be suitable for production code. Clear and professional comments would help future readers understand the code.
-            for (int i = 1; i < n; i++) {
-                if (getVal(data[i]) < getVal(data[i-1])) { //JV hodnekrat zbytecne pocitate vzdalenost stejneho bodu 
-                    tmp = data[i];
-                    data[i] = data[i-1];
-                    data[i-1] = tmp;
+        // Sort
+        double[] valholder = new double[n]; // holds values for all points
+        for (int idx = 0; idx < n; idx++) {
+            valholder[idx] = getVal(data[idx]); // Get value for each point
+        }
+        double temp = 0;
+        for (int i = 0; i < n - 1; i++) { // Bubble sort ?
+            for (int j = 0; j < n - i - 1; j++) {
+                if (valholder[j] > valholder[j + 1]) {
+                    // Swap value
+                    temp = valholder[j];
+                    valholder[j] = valholder[j + 1];
+                    valholder[j + 1] = temp;
+                    // Swap data corresponding to value
+                    tmp = data[j];
+                    data[j] = data[j+1];
+                    data[j+1] = tmp;
                 }
             }
         }
+        
         
         // Output
         switch (d) {
@@ -71,7 +81,7 @@ public class U06DistanceFromOrigin {
                 System.out.println(String.format("| %8s | | %8s |", "COORD_1", "DISTANCE"));
                 System.out.println("+----------+-+----------+");
                 for (int i = 0; i < n; i++) {
-                    System.out.println(String.format("| %8.3f | | %8.3f |", data[i][0], getVal(data[i])));
+                    System.out.println(String.format("| %8.3f | | %8.3f |", data[i][0], valholder[i]));
                 }
                 System.out.println("+----------+-+----------+");
                 break;
@@ -80,7 +90,7 @@ public class U06DistanceFromOrigin {
                 System.out.println(String.format("| %8s | %8s | | %8s |", "COORD_1", "COORD_2", "DISTANCE"));
                 System.out.println("+----------+----------+-+----------+");
                 for (int i = 0; i < n; i++) {
-                    System.out.println(String.format("| %8.3f | %8.3f | | %8.3f |", data[i][0], data[i][1], getVal(data[i])));
+                    System.out.println(String.format("| %8.3f | %8.3f | | %8.3f |", data[i][0], data[i][1], valholder[i]));
                 }
                 System.out.println("+----------+----------+-+----------+");
                 break;
@@ -89,7 +99,7 @@ public class U06DistanceFromOrigin {
                 System.out.println(String.format("| %8s | %8s | %8s | | %8s |", "COORD_1", "COORD_2", "COORD_3", "DISTANCE"));
                 System.out.println("+----------+----------+----------+-+----------+");
                 for (int i = 0; i < n; i++) {
-                    System.out.println(String.format("| %8.3f | %8.3f | %8.3f | | %8.3f |", data[i][0], data[i][1], data[i][2], getVal(data[i])));
+                    System.out.println(String.format("| %8.3f | %8.3f | %8.3f | | %8.3f |", data[i][0], data[i][1], data[i][2], valholder[i]));
                 }
                 System.out.println("+----------+----------+----------+-+----------+");
                 break;
