@@ -4,7 +4,7 @@ package school.a6array;
 import java.util.Scanner;
 
 
-public class LoadPrintArray2 {
+public class LoadPrintArrayDynamic {
     
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
