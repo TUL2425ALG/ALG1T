@@ -1,6 +1,9 @@
 package school.a6array;
 
+import java.util.Random;
+
 public class ArrayTools {
+    static Random rn = new Random();
 
     public static void main(String[] args) {
 
@@ -18,6 +21,12 @@ public class ArrayTools {
         System.out.println(isSorted(b)); //ocekavame false
         System.out.println(isSorted(a)); //ocekavame true
         System.out.println(isSorted(e)); //ocekavame false
+        a = getRandomArray(10, 2, 6);
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i]);
+            
+        } 
+        // očekáváme 10 čísel nádoné od 2 včetně do 6 včetně
     }
 
     public static int sumOfArray(int[] a) {
@@ -125,5 +134,18 @@ public class ArrayTools {
         }
         return true;
         //return sorted;
+    }
+    /**
+     * @param arraylength length of array
+     * @param min smallest value that can generate
+     * @param max biggest value that can generate
+     * @return an array with random values from min to max
+     */
+    public static int[] getRandomArray(int arrayLength, int min, int max){
+        int[] array = new int[arrayLength];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rn.nextInt(max + 1 - min) + min;
+        }
+        return array;
     }
 }
