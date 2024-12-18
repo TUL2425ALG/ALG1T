@@ -33,7 +33,6 @@ public class U39Calculator {
                         a /= b;
                     } else {
                         System.out.println("Dělení nulou nelze.");
-                        break; //neni potreba
                     }
                     break;
                 default:
